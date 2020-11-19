@@ -9,10 +9,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'ycm-core/YouCompleteMe'
+Plugin 'neoclide/coc.nvim'
 
 call vundle#end()
 filetype plugin indent on
+
+" :Prettier command setup
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " syntax highlight
 syntax on
