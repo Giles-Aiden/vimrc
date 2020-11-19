@@ -1,7 +1,19 @@
 " resets unexpected OS tweaks to vim
 set nocompatible
-" Determing syntax by filetype
-filetype indent plugin on
+" vundle requirement
+filetype off
+" runtime include vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Vundle
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'ycm-core/YouCompleteMe'
+
+call vundle#end()
+filetype plugin indent on
+
 " syntax highlight
 syntax on
 "allows windows to be stored in buffers
@@ -36,7 +48,7 @@ set number
 " python setup
 set pythonthreedll=py
 
-" Set tab ident to 2
+" Set tab indent to 2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
@@ -47,9 +59,9 @@ set wrap!
 
 " html autocomplete
 set omnifunc=htmlcomplete#CompleteTags
-" css autocomplete
+" CSS autocomplete
 set omnifunc=csscomplete#CompleteCSS
-" js autocomplete
+" JavaScript autocomplete
 set omnifunc=javascriptcomplete#CompleteJS
 
 "sets ctrl+l to remove highlighting
