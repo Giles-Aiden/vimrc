@@ -9,13 +9,31 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+" GruBox Theme
+Plugin 'morhetz/gruvbox'
+" autocomplete
 Plugin 'neoclide/coc.nvim'
+" NerdTree file explorer
+Plugin 'preservim/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ryanoasis/vim-devicons'
+" Fuzzy File Finder
+Plugin 'kien/ctrlp.vim'
+
 
 call vundle#end()
-filetype plugin indent on
+filetype plugin on
 
-" :Prettier command setup
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" GruvBox enable
+let g:gruvbox_italic=1
+let g:gruvbox_improved_strings=1
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_contrast_dark='hard'
+autocmd vimenter * ++nested colorscheme gruvbox
+set bg=dark
+
+" :Pretty command setup
+command! -nargs=0 Pretty :CocCommand prettier.formatFile
 
 " syntax highlight
 syntax on
@@ -40,16 +58,9 @@ set smartindent
 " shameless emoji formatting
 set emoji
 
-" spellcheck
-set spell
-set spelllang=en
-
 " sets hybrid numbers on left
 set relativenumber
 set number
-
-" python setup
-set pythonthreedll=py
 
 " Set tab indent to 2
 set shiftwidth=2
@@ -57,6 +68,8 @@ set softtabstop=2
 set expandtab
 " Set encoding
 set encoding=utf-8
+" Set Font
+set guifont=Lilex\ 13
 " Disable wrap
 set wrap!
 
@@ -75,3 +88,8 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
+" Nerd tree toggle = <F3>
+nmap <F3> :NERDTreeToggle<CR>
+" Nerd Tree see .dotfiles
+let NERDTreeShowHidden=1
