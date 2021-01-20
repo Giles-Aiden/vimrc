@@ -54,6 +54,8 @@ set hlsearch
 " when doesn't know how to indent it stays on the same indentation as current line
 set autoindent
 set smartindent
+" Backspace
+set backspace=indent,eol,start
 
 " shameless emoji formatting
 set emoji
